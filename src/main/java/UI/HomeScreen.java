@@ -7,7 +7,7 @@ public class HomeScreen {
 
     public void displayHomeScreen() {
         while (true) {
-            System.out.println("=== Car Dealership Menu ===");
+            System.out.println("\n=== Car Dealership Menu ===\n");
             System.out.println("1. View/Search Vehicles");
             System.out.println("2. Add/Remove Vehicles");
             System.out.println("3. Create Sale/Lease Contracts");
@@ -18,7 +18,8 @@ public class HomeScreen {
 
             switch (choice) {
                 case "1":
-//                    viewOrSearchVehicles();
+                    ViewSearch viewSearch = new ViewSearch();
+                    viewSearch.displayViewSearch();
                     break;
                 case "2":
 //                    addOrRemoveVehicles();
