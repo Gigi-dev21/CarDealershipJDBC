@@ -14,6 +14,7 @@ public class ViewSearch {
             System.out.println("  4. By color");
             System.out.println("  5. By mileage range");
             System.out.println("  6. By type");
+            System.out.println("  7. View All");
             System.out.println("  0. Exit");
             System.out.print("Enter your choice: ");
 
@@ -36,6 +37,9 @@ public class ViewSearch {
 
                     break;
                 case "6":
+
+                    break;
+                case "7":
 
                     break;
                 case "0":

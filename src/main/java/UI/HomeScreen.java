@@ -22,10 +22,12 @@ public class HomeScreen {
                     viewSearch.displayViewSearch();
                     break;
                 case "2":
-//                    addOrRemoveVehicles();
+                    AddRemove addRemove = new AddRemove();
+                    addRemove.displayAddRemove();
                     break;
                 case "3":
-//                    createContract();
+                    CreateSaleLease createSaleLease = new CreateSaleLease();
+                    createSaleLease.displayCreateSaleLease();
                     break;
                 case "0":
                     System.out.println("Exiting... Goodbye!");
