@@ -6,7 +6,9 @@ import java.util.Scanner;
 
 public class ViewSearch {
     private final Scanner scanner = new Scanner(System.in);
-    public void displayViewSearch(){
+    ViewSearchVehiclesMethods viewSearchVehiclesMethods = new ViewSearchVehiclesMethods();
+
+    public void displayViewSearch() {
         while (true) {
             System.out.println("\n=== View/Search Vehicles Menu ===");
             System.out.println("\nSearch Vehicles By:");
@@ -24,7 +26,7 @@ public class ViewSearch {
 
             switch (choice) {
                 case "1":
-
+                    viewSearchVehiclesMethods.byPriceRange();
                     break;
                 case "2":
 
@@ -42,7 +44,6 @@ public class ViewSearch {
 
                     break;
                 case "7":
-                    ViewSearchVehiclesMethods viewSearchVehiclesMethods=new ViewSearchVehiclesMethods();
                     viewSearchVehiclesMethods.displayAllVehicles();
                     break;
                 case "0":
