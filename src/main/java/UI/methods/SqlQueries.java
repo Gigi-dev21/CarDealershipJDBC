@@ -22,5 +22,8 @@ public class SqlQueries {
     public static final String SEARCH_BY_TYPE =
             "SELECT * FROM vehicles WHERE type = ?";
 
-
+    //Add vechile//
+    public static final String INSERT_VEHICLE =
+            "INSERT INTO vehicles (VIN, make, model, year, color, sold, price) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?)";
 }

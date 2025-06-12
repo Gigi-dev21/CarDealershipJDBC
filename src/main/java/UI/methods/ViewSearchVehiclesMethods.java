@@ -83,27 +83,6 @@ public class ViewSearchVehiclesMethods {
         displayVehicles(vehicles, "\nVehicles with Make: " + make + " and Model: " + model);
     }
 
-    public void byMilageRange() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("=== Search Vehicles by Mileage Range ===");
-
-        System.out.print("Enter minimum mileage: ");
-        double minMileage = scanner.nextDouble();
-
-        System.out.print("Enter maximum mileage: ");
-        double maxMileage = scanner.nextDouble();
-
-        if (minMileage > maxMileage) {
-            System.out.println("Minimum mileage cannot be greater than maximum mileage. Please try again.");
-            return;
-        }
-
-        System.out.println("Searching vehicles between " + minMileage + " and " + maxMileage + " miles...");
-
-        List<Vehicle> vehicles = searchVehicles(SqlQueries.SEARCH_BY_MILEAGE_RANGE, minMileage, maxMileage);
-
-        displayVehicles(vehicles, "Vehicles with Mileage between " + minMileage + " and " + maxMileage);
-    }
     public void byYearRange() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("=== Search Vehicles by Year Range ===");
@@ -142,6 +121,7 @@ public class ViewSearchVehiclesMethods {
 
         displayVehicles(vehicles, "Vehicles with Color: " + color);
     }
+
 
 
 
