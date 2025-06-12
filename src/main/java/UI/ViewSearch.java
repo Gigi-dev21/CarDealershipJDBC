@@ -16,9 +16,7 @@ public class ViewSearch {
             System.out.println("  2. By make/model");
             System.out.println("  3. By year range");
             System.out.println("  4. By color");
-            System.out.println("  5. By mileage range");
-            System.out.println("  6. By type");
-            System.out.println("  7. View All");
+            System.out.println("  5. View All");
             System.out.println("  0. Exit");
             System.out.print("Enter your choice: ");
 
@@ -32,18 +30,12 @@ public class ViewSearch {
                     viewSearchVehiclesMethods.byMakeModel();
                     break;
                 case "3":
-
+                    viewSearchVehiclesMethods.byYearRange();
                     break;
                 case "4":
-
+                    viewSearchVehiclesMethods.byColor();
                     break;
                 case "5":
-
-                    break;
-                case "6":
-
-                    break;
-                case "7":
                     viewSearchVehiclesMethods.displayAllVehicles();
                     break;
                 case "0":

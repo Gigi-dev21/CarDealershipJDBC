@@ -83,6 +83,68 @@ public class ViewSearchVehiclesMethods {
         displayVehicles(vehicles, "\nVehicles with Make: " + make + " and Model: " + model);
     }
 
+    public void byMilageRange() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("=== Search Vehicles by Mileage Range ===");
+
+        System.out.print("Enter minimum mileage: ");
+        double minMileage = scanner.nextDouble();
+
+        System.out.print("Enter maximum mileage: ");
+        double maxMileage = scanner.nextDouble();
+
+        if (minMileage > maxMileage) {
+            System.out.println("Minimum mileage cannot be greater than maximum mileage. Please try again.");
+            return;
+        }
+
+        System.out.println("Searching vehicles between " + minMileage + " and " + maxMileage + " miles...");
+
+        List<Vehicle> vehicles = searchVehicles(SqlQueries.SEARCH_BY_MILEAGE_RANGE, minMileage, maxMileage);
+
+        displayVehicles(vehicles, "Vehicles with Mileage between " + minMileage + " and " + maxMileage);
+    }
+    public void byYearRange() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("=== Search Vehicles by Year Range ===");
+
+        System.out.print("Enter minimum year: ");
+        int minYear = scanner.nextInt();
+
+        System.out.print("Enter maximum year: ");
+        int maxYear = scanner.nextInt();
+
+        if (minYear > maxYear) {
+            System.out.println("Minimum year cannot be greater than maximum year. Please try again.");
+            return;
+        }
+
+        System.out.println("Searching vehicles between years " + minYear + " and " + maxYear + "...");
+
+        List<Vehicle> vehicles = searchVehicles(SqlQueries.SEARCH_BY_YEAR_RANGE, minYear, maxYear);
+
+        displayVehicles(vehicles, "Vehicles manufactured between " + minYear + " and " + maxYear);
+    }
+
+    public void byColor() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("=== Search Vehicles by Color ===");
+
+        System.out.print("Enter color: ");
+        String color = scanner.nextLine().trim();
+
+        if (color.isEmpty()) {
+            System.out.println("Color cannot be empty. Please try again.");
+            return;
+        }
+
+        List<Vehicle> vehicles = searchVehicles(SqlQueries.SEARCH_BY_COLOR, color);
+
+        displayVehicles(vehicles, "Vehicles with Color: " + color);
+    }
+
+
+
     // Helper method to display list of vehicles with a title
     private void displayVehicles(List<Vehicle> vehicles, String title) {
         if (vehicles.isEmpty()) {
