@@ -34,7 +34,7 @@ public class AddremoveMethods {
         return new Vehicle(vin, year, make, model, color, sold, price);
     }
 
-    public void addVehicle( ) {
+    public void addVehicle() {
         Scanner scanner = new Scanner(System.in);
         Vehicle vehicle = getVehicleFromUser(scanner);
         try (Connection conn = MyDataSource.getInstance().getConnection();
@@ -57,5 +57,29 @@ public class AddremoveMethods {
             e.printStackTrace();
         }
     }
+
+    public void removeVehicle() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter VIN of the vehicle to remove: ");
+        String vin = scanner.nextLine();
+
+
+        try (Connection conn = MyDataSource.getInstance().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(SqlQueries.DELETE_VEHICLE)) {
+
+            stmt.setString(1, vin);
+            int rowsDeleted = stmt.executeUpdate();
+
+            if (rowsDeleted > 0) {
+                System.out.println("Vehicle with VIN " + vin + " was removed successfully.");
+            } else {
+                System.out.println("No vehicle found with VIN " + vin + ".");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

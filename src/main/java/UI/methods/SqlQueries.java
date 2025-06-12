@@ -26,4 +26,7 @@ public class SqlQueries {
     public static final String INSERT_VEHICLE =
             "INSERT INTO vehicles (VIN, make, model, year, color, sold, price) " +
                     "VALUES (?, ?, ?, ?, ?, ?, ?)";
+    public static final String DELETE_VEHICLE ="DELETE FROM vehicles WHERE vin = ?";
+
+
 }
