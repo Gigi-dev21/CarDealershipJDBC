@@ -1,5 +1,7 @@
 package UI;
 
+import UI.methods.ViewSearchVehiclesMethods;
+
 import java.util.Scanner;
 
 public class ViewSearch {
@@ -40,7 +42,8 @@ public class ViewSearch {
 
                     break;
                 case "7":
-
+                    ViewSearchVehiclesMethods viewSearchVehiclesMethods=new ViewSearchVehiclesMethods();
+                    viewSearchVehiclesMethods.displayAllVehicles();
                     break;
                 case "0":
                     System.out.println("Exiting search menu...");
