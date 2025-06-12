@@ -68,6 +68,21 @@ public class ViewSearchVehiclesMethods {
         displayVehicles(vehicles, "Vehicles in Price Range $" + minPrice + " - $" + maxPrice);
     }
 
+    public void byMakeModel() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\n=== Search Vehicles by Make and Model ===");
+
+        System.out.print("Enter make: ");
+        String make = scanner.nextLine();  // Use String, not double
+
+        System.out.print("Enter model: ");
+        String model = scanner.nextLine(); // Use String, not double
+
+        List<Vehicle> vehicles = searchVehicles(SqlQueries.SEARCH_BY_MAKE_MODEL, make, model);
+
+        displayVehicles(vehicles, "\nVehicles with Make: " + make + " and Model: " + model);
+    }
+
     // Helper method to display list of vehicles with a title
     private void displayVehicles(List<Vehicle> vehicles, String title) {
         if (vehicles.isEmpty()) {

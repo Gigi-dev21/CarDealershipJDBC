@@ -29,7 +29,7 @@ public class ViewSearch {
                     viewSearchVehiclesMethods.byPriceRange();
                     break;
                 case "2":
-
+                    viewSearchVehiclesMethods.byMakeModel();
                     break;
                 case "3":
 
